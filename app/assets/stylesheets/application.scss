@@ -14,26 +14,23 @@
  *= require_self
  */
 
+@import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
 
-.fa, .fas {
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 600;
-  line-height: normal;
+header{
+	color:white;
+	.navbar-left{
+		span{
+			font-size:20px;
+			padding-top:10px;
+		}
+	}
 }
 
-#notice {
-  color: green;
+.body{
+	margin-top:51px;
 }
 
-#error_explanation {
-  color: red;
-}
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
+header .navbar-left span {
+	display:inline-block;
 }
