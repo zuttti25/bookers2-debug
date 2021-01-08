@@ -10,7 +10,7 @@ class BookCommentsController < ApplicationController
 
   def destroy
     #BookComment.find_by(id: params[:id], book_id: params[:book_id]).destroy
-    #非同期通信のため
+    #非同期通信のため分解
     @book = Book.find(params[:book_id])
     book_comment = @book.book_comments.find(params[:id])
     book_comment.destroy
