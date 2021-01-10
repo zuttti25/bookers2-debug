@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'searchs/search'
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+  }
   resources :users,only: [:show,:index,:edit,:update,:create,:destroy] 
   
   get "/users/:id/relationships/follow" => "relationships#follow_index", as: "follow"
