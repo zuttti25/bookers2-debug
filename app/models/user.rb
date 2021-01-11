@@ -15,7 +15,11 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :follow
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
   has_many :followers, through: :reverse_of_relationships, source: :user
-  
+
+  #チャット
+  has_many :user_rooms
+  has_many :chats
+  has_many :rooms, through: :user_rooms
   
   attachment :profile_image, destroy: false
 
