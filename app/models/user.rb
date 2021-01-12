@@ -17,8 +17,8 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :user
 
   #チャット
-  has_many :user_rooms
   has_many :chats
+  has_many :user_rooms
   has_many :rooms, through: :user_rooms
   
   attachment :profile_image, destroy: false

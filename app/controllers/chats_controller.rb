@@ -1,10 +1,10 @@
 class ChatsController < ApplicationController
   def show
     @user = User.find(params[:id])
-    # ログインユーザーのidが入ったroom_idのみを配列で取得
     rooms = current_user.user_rooms.pluck(:room_id)
-    # user_idが@user　且つ　room_idがrooms配列の中にある数値　のものを取得
+    # ログインユーザーのidが入ったroom_idのみを配列で取得
     user_rooms = UserRoom.find_by(user_id: @user.id, room_id: rooms)
+    # user_idが@user　且つ　room_idがrooms配列の中にある数値　のものを取得
 
     if user_rooms.nil?
       # 取得していない場合、roomのレコードとuser_roomのレコードを作成
